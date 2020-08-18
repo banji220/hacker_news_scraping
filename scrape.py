@@ -10,7 +10,7 @@ votes = soup.select(".score")
 
 # Making a function to sort votes from highes to lowest
 def sort_by_votes(hnlist):
-    return sorted(hnlist, key = lambda k:k["votes"])
+    return sorted(hnlist, key = lambda k:k["votes"], reverse= True)
 
 # Making a function with two parameted
 def hackernews(links, votes):

@@ -5,4 +5,15 @@ response = requests.get("https://news.ycombinator.com/")
 soup = BeautifulSoup(response.text, "html.parser")
 
 
-print(soup.select(".score"))
+links = soup.select(".storylink ")
+votes = soup.select(".score")
+
+# Making a function with two parameted
+def hackernews(links, votes):
+    hn = []
+    for idx, item in enumerate(links):
+        title = links[idx].getText()
+        hn.append(title)
+    return hn
+
+print(hackernews(links, votes))
